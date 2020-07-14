@@ -14,6 +14,7 @@ const rooms: Rooms<Websocket> = new Rooms();
 
 function noop() {}
 
+
 type AliveWebsocket = Websocket & {
     isAlive: boolean;
 }
