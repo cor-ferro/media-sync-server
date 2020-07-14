@@ -49,6 +49,7 @@ wss.on('connection', (ws: AliveWebsocket) => {
         ws.isAlive = true;
     });
     ws.on('message', (message) => {
+        debug(message);
         try {
             const data: MediaSyncMessage = JSON.parse(message as string);
             if (!data) {
