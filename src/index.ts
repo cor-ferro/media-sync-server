@@ -57,7 +57,7 @@ wss.on('connection', (ws: AliveWebsocket) => {
             rooms.addMember(data.resource, ws);
             rooms.forRoom(data.resource, (member) => {
                 if (member !== ws && member.readyState === Websocket.OPEN) {
-                    member.send(data);
+                    member.send(message);
                 }
             });
         } catch (err) {
