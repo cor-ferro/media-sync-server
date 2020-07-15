@@ -21,7 +21,6 @@ type AliveWebsocket = Websocket & {
 
 const interval = setInterval(() => {
     wss.clients.forEach((ws: AliveWebsocket) => {
-        ws.send(JSON.stringify({test: true}));
         if (ws.isAlive === false) {
             rooms.removeMember(ws);
             return ws.terminate();
